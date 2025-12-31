@@ -20,15 +20,15 @@ class CSRMatrix(Matrix):
         pass
 
     def transpose(self) -> 'Matrix':
-        """Транспонирование CSR матрицы."""
+        """
+        Транспонирование CSR матрицы.
+        Hint:
+        Результат - в CSC формате (с теми же данными, но с интерпретацией столбцов как строк).
+        """
         pass
 
     def _matmul_impl(self, other: 'Matrix') -> 'Matrix':
         """Умножение CSR матриц."""
-        pass
-
-    def _to_coo(self) -> 'COOMatrix':
-        """Преобразование CSR в COO."""
         pass
 
     @classmethod
@@ -39,5 +39,11 @@ class CSRMatrix(Matrix):
     def _to_csc(self) -> 'CSCMatrix':
         """
         Преобразование CSRMatrix в CSCMatrix.
+        """
+        pass
+    
+    def _to_coo(self) -> 'COOMatrix':
+        """
+        Преобразование CSRMatrix в COOMatrix.
         """
         pass

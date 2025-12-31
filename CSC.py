@@ -20,7 +20,11 @@ class CSCMatrix(Matrix):
         pass
 
     def transpose(self) -> 'Matrix':
-        """Транспонирование CSC матрицы."""
+        """
+        Транспонирование CSC матрицы.
+        Hint:
+        Результат - в CSR формате (с теми же данными, но с интерпретацией строк как столбцов).
+        """
         pass
 
     def _matmul_impl(self, other: 'Matrix') -> 'Matrix':
