@@ -6,7 +6,6 @@ on:
 jobs:
   test:
     runs-on: ubuntu-latest
-    timeout-minutes: 2
 
     steps:
       - name: Checkout student code
@@ -17,12 +16,23 @@ jobs:
       - name: Checkout reference
         uses: actions/checkout@v4
         with:
-          repository: L1st3ner/AIE_matrix_lab
+          repository: your-org/matrix-reference
           token: ${{ secrets.REFERENCE_TOKEN }}
           path: reference
 
-      - name: Install deps
+      - name: Check tests readiness
+        run: |
+          if [[ "${{ secrets.TESTS_READY }}" != "1" ]]; then
+            echo "Тесты ещё не готовы для запуска. Попробуйте ещё раз после объявления от @raindmitriy об открытии тестов"
+            exit 1
+          else
+            echo "Тесты доступны!"
+          fi
+
+      - name: Install dependencies
         run: pip install pytest
 
       - name: Run tests
-        run: pytest reference/tests_base_operations.py
+        run: |
+          echo "Запуск тестов"
+          pytest reference/tests_base_operations.py --tb=short --maxfail=5
