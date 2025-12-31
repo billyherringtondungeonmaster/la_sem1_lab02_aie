@@ -7,6 +7,7 @@ def lu_decomposition(A: CSCMatrix) -> Optional[Tuple[CSCMatrix, CSCMatrix]]:
     """
     LU-разложение для CSC матрицы.
     Возвращает (L, U) - нижнюю и верхнюю треугольные матрицы.
+    Ожидается, что матрица L хранит единицы на главной диагонали.
     """
     pass
 
@@ -22,3 +23,4 @@ def find_det_with_lu(A: CSCMatrix) -> Optional[float]:
     det(A) = det(L) * det(U)
     """
     pass
+
