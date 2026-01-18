@@ -1,5 +1,5 @@
 from base import Matrix
-from types import CSRData, CSRIndices, CSRIndptr, Shape, DenseMatrix
+from matrix_types import CSRData, CSRIndices, CSRIndptr, Shape, DenseMatrix
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:

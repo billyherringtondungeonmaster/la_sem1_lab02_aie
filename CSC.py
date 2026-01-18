@@ -1,5 +1,5 @@
 from base import Matrix
-from types import CSCData, CSCIndices, CSCIndptr, Shape, DenseMatrix
+from matrix_types import CSCData, CSCIndices, CSCIndptr, Shape, DenseMatrix
 from typing import TYPE_CHECKING
 
 if TYPE_CHECKING:
